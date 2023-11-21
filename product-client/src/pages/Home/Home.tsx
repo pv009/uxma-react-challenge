@@ -1,13 +1,11 @@
+import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => (
     <div>
-        <h1>Hello on fake store!</h1>
-        <Link to="/products">
-            <Button variant="contained">Go to products</Button>
-        </Link>
+        <Typography variant="h1" sx={{mb: 2}}>Willkommen bei Fake-Store!</Typography>
+        <Button variant="contained" href="/products">Zu den Produkten</Button>
     </div>
 );
 

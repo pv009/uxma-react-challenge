@@ -1,6 +1,6 @@
 import {Product} from "../../../model/product.model";
-import { Typography, Card, CardContent, Chip, Box, Button } from "@mui/material";
-import styles from './ProductCard.module.css';
+import { Typography, Card, CardContent, Chip, Box, IconButton } from "@mui/material";
+import styles from './ProductCard.module.scss';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import StarIcon from '@mui/icons-material/Star';
 
@@ -19,31 +19,34 @@ const ProductCard = (props: ProductCardProps) => {
 
     return (
         <div className={styles.productCardContainer}>
-            <Card>
-                <CardContent>
+            <Card className={styles.productCard}>
+                <CardContent className={styles.cardContent}>
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'row',
                         alignItems: 'start',
                         justifyContent: 'space-between',
                         position: 'relative',
-                        pr: 10
+                        pr: 9
                     }}>
                         <div className={styles.productDetails}>
-                            <Typography variant="h3">{product.title}</Typography>
-                            <Chip label={price} variant="filled" className={styles.priceTag} />
+                            <Typography variant="h2">{product.title}</Typography>
                         </div>
-                        <img src={product.image_url} alt={`Produktbild ${product.title}`} />
-                        <Button variant="text" className={styles.favoriteButton} onClick={toggleFavorite}>
-                            {!isFavorite && (
-                                <StarOutlineIcon />
-                            )}
-                            {isFavorite && (
-                                <StarIcon />
-                            )}
-                        </Button>
+                        <img
+                            src={product.image_url}
+                            alt={`Produktbild ${product.title}`}
+                            className={styles.productImage} />
                     </Box>
                 </CardContent>
+                <Chip label={price} variant="filled" className={styles.priceTag} color="secondary" />
+                <IconButton className={styles.favoriteButton} onClick={toggleFavorite} color="primary">
+                    {!isFavorite && (
+                        <StarOutlineIcon />
+                    )}
+                    {isFavorite && (
+                        <StarIcon />
+                    )}
+                </IconButton>
             </Card>
         </div>
     );

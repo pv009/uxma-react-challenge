@@ -1,0 +1,32 @@
+.productCardContainer {
+    margin-bottom: 20px;
+
+    .productCard {
+        min-height: 200px;
+        position: relative;
+
+        .cardContent {
+            height: 100%;
+
+            .productDetails {
+                height: 100%;
+            }
+
+            .productImage {
+                max-height: 168px;
+            }
+        }
+
+        .priceTag {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+        }
+
+        .favoriteButton {
+            position: absolute !important;
+            top: 16px;
+            right: 16px;
+        }
+    }
+}
