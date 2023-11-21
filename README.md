@@ -8,4 +8,4 @@
 4. run npm install on /api folder
 5. run npm run dev on /api folder
 6. run npm install on /client folder
-7. run npm run serve on /client folder
+7. run npm run start on /client folder
