@@ -11,7 +11,7 @@ interface ProductCardProps {
 }
 const ProductCard = (props: ProductCardProps) => {
     const {product, isFavorite, favoriteHandler } = props;
-    const price = `${product.price.toString().replace('.', ',')} €`;
+    const price = `${product.price.toFixed(2).replace('.', ',')} €`;
 
     const toggleFavorite = () => {
         favoriteHandler(product.id);

@@ -7,7 +7,11 @@ const router = Router();
 router.get('/', async (req: Request, res: Response) => {
     try {
         const productsResult: QueryResult<Product> = await db.getAllProducts();
-        res.json(productsResult.rows);
+        const products = productsResult.rows.map((product: Product) => ({
+            ...product,
+            price: parseFloat(product.price),
+        }));
+        res.json(products);
     } catch (err) {
         console.error(err);
         res.status(500).send('Internal Server Error');

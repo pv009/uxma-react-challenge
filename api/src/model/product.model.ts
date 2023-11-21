@@ -1,7 +1,7 @@
-export interface Product {
+export type Product = {
     id: number;
     title: string;
-    price: number;
+    price: string;
     image_url: string;
     created_at: Date;
     updated_at: Date;
