@@ -33,7 +33,7 @@ const ProductCard = (props: ProductCardProps) => {
                             <Typography variant="h2">{product.title}</Typography>
                         </div>
                         <img
-                            src={product.image_url}
+                            src={product.image}
                             alt={`Produktbild ${product.title}`}
                             className={styles.productImage} />
                     </Box>

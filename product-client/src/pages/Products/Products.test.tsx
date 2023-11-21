@@ -13,17 +13,25 @@ const testProducts: Array<Product> = [
         id: 1,
         title: "Test Product",
         price: 10.00,
-        image_url: "https://dummyimage.com/230x150.png/dddddd/000000",
-        created_at: new Date(),
-        updated_at: new Date(),
+        image: "https://dummyimage.com/230x150.png/dddddd/000000",
+        description: "Test Description",
+        category: "Test Category",
+        rating: {
+            rate: 4.5,
+            count: 10
+        }
     },
     {
         id: 2,
         title: "Test Product 2",
         price: 20.00,
-        image_url: "https://dummyimage.com/230x150.png/dddddd/000000",
-        created_at: new Date(),
-        updated_at: new Date(),
+        image: "https://dummyimage.com/230x150.png/dddddd/000000",
+        description: "Test Description",
+        category: "Test Category",
+        rating: {
+            rate: 4.5,
+            count: 10
+        }
     }
 ];
 

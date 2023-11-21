@@ -9,9 +9,13 @@ const testProduct: Product = {
     id: 1,
     title: "Test Product",
     price: 10.00,
-    image_url: "https://dummyimage.com/230x150.png/dddddd/000000",
-    created_at: new Date(),
-    updated_at: new Date(),
+    image: "https://dummyimage.com/230x150.png/dddddd/000000",
+    description: "Test Description",
+    category: "Test Category",
+    rating: {
+        rate: 4.5,
+        count: 10
+    }
 }
 const favoriteHandler = jest.fn();
 describe('ProductCard', () => {
@@ -21,7 +25,7 @@ describe('ProductCard', () => {
 
     test('renders all product infos', async () => {
         expect(screen.getByRole('heading')).toHaveTextContent(testProduct.title);
-        expect(screen.getByRole('img')).toHaveAttribute('src', testProduct.image_url);
+        expect(screen.getByRole('img')).toHaveAttribute('src', testProduct.image);
         expect(screen.getByText('10,00 €')).toBeInTheDocument();
     });
 
